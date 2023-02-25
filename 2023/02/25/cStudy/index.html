@@ -4,9 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="note, Hexo">
-    <meta name="description" content="notenote
-">
+    <meta name="keywords" content="c语言学习, Hexo">
+    <meta name="description" content="语法结构体创建和使用结构体#include &amp;lt;stdio.h&gt;
+struct Student
+&amp;#123;
+    // 使用 (struct关键字 + 结构体类型名称)
+    // 来声明结构体类型，这种类型是我们自己创建的（同样">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>note | Hexo</title>
+    <title>c语言学习 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -269,12 +272,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">note</h1>
+                    <h1 class="description center-align post-title">c语言学习</h1>
                 </div>
             </div>
         </div>
@@ -298,8 +301,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/note/">
-                                <span class="chip bg-color">note</span>
+                            <a href="/tags/c/">
+                                <span class="chip bg-color">c</span>
                             </a>
                         
                     </div>
@@ -310,8 +313,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/note/" class="post-category">
-                                note
+                            <a href="/categories/c/" class="post-category">
+                                c
                             </a>
                         
                     </div>
@@ -337,14 +340,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    5 Min
                 </div>
                 
 
@@ -367,8 +370,111 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="note"><a href="#note" class="headerlink" title="note"></a>note</h1><h2 id="note-1"><a href="#note-1" class="headerlink" title="note"></a>note</h2><p><img src="/../images/Snipaste_2023-02-25_21-27-47.png" alt="image1"></p>
+                <h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><h3 id="创建和使用结构体"><a href="#创建和使用结构体" class="headerlink" title="创建和使用结构体"></a>创建和使用结构体</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">struct</span> <span class="token class-name">Student</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token comment">// 使用 (struct关键字 + 结构体类型名称)</span>
+    <span class="token comment">// 来声明结构体类型，这种类型是我们自己创建的（同样也可以作为函数的参数、返回值之类的）</span>
+    <span class="token keyword">int</span> id<span class="token punctuation">;</span>
+    <span class="token comment">// 结构体中可以包含多个不同类型的数据，这些数据共同组成了整个结构体类型（当然结构体内部也能包含结构体类型的变量）</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token comment">// 用户名可以用指针指向一个字符串，也可以用char数组来存，如果是指针的话，那么数据不会存在结构体中，只会存放字符串的地址，但是如果是数组的话，数据会存放在结构体中</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>name<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">Student</span> stu0 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">000</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">"Liang0"</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"id=%d age=%d name=%s \n"</span><span class="token punctuation">,</span> stu0<span class="token punctuation">.</span>id<span class="token punctuation">,</span> stu0<span class="token punctuation">.</span>age<span class="token punctuation">,</span> stu0<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    stu0<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"Studentc"</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"id=%d age=%d name=%s \n"</span><span class="token punctuation">,</span> stu0<span class="token punctuation">.</span>id<span class="token punctuation">,</span> stu0<span class="token punctuation">.</span>age<span class="token punctuation">,</span> stu0<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p><img src="/../image/Snipaste_2023-02-16_10-17-46.png"></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">struct</span> <span class="token class-name">student</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">long</span> <span class="token keyword">int</span> id<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> stu2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">002</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token string">"Liang2"</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> stu4<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"id=%ld age=%d name=%s \n"</span><span class="token punctuation">,</span> stu2<span class="token punctuation">.</span>id<span class="token punctuation">,</span> stu2<span class="token punctuation">.</span>age<span class="token punctuation">,</span> stu2<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">student</span> stu0 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">000</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">"Liang0"</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"id=%ld age=%d name=%s \n"</span><span class="token punctuation">,</span> stu0<span class="token punctuation">.</span>id<span class="token punctuation">,</span> stu0<span class="token punctuation">.</span>age<span class="token punctuation">,</span> stu0<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">student</span> stu1<span class="token punctuation">;</span> <span class="token comment">// 定义了一个student类型的变量stu1</span>
+    stu1<span class="token punctuation">.</span>id <span class="token operator">=</span> <span class="token number">001</span><span class="token punctuation">;</span>       <span class="token comment">// 通过成员运算符'.'来访问结构体的成员变量</span>
+    stu1<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">21</span><span class="token punctuation">;</span>
+    <span class="token function">strcpy</span><span class="token punctuation">(</span>stu1<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token string">"Liang1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 因为数组在非初始化时，不能直接通过数组名直接赋值，strcpy函数需要包含头文件string.h</span>
+    <span class="token comment">// 错误的写法：stu1.name = "Liang";</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"id=%ld age=%d name=%s \n"</span><span class="token punctuation">,</span> stu1<span class="token punctuation">.</span>id<span class="token punctuation">,</span> stu1<span class="token punctuation">.</span>age<span class="token punctuation">,</span> stu1<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">student</span> stu3 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">.</span>id <span class="token operator">=</span> <span class="token number">003</span><span class="token punctuation">,</span> <span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"Liang3"</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"id=%ld age=%d name=%s \n"</span><span class="token punctuation">,</span> stu3<span class="token punctuation">.</span>id<span class="token punctuation">,</span> stu3<span class="token punctuation">.</span>age<span class="token punctuation">,</span> stu3<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">student</span> stu5<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">student</span> <span class="token operator">*</span>sp <span class="token operator">=</span> <span class="token operator">&amp;</span>stu5<span class="token punctuation">;</span>
+    sp<span class="token operator">-></span>id <span class="token operator">=</span> <span class="token number">005</span><span class="token punctuation">;</span>
+    <span class="token punctuation">(</span><span class="token operator">*</span>sp<span class="token punctuation">)</span><span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"id=%ld age=%d name=%s \n"</span><span class="token punctuation">,</span> stu5<span class="token punctuation">.</span>id<span class="token punctuation">,</span> stu5<span class="token punctuation">.</span>age<span class="token punctuation">,</span> stu5<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/../image/Snipaste_2023-02-16_10-19-38.png"></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">Student</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">Student</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> Student1<span class="token punctuation">,</span> <span class="token operator">*</span>StudentPtr<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    StudentPtr s1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Student</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Student</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    StudentPtr s2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Student</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Student</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s1<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Student</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Student</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s2<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Student</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Student</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s1<span class="token operator">-></span>age <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    s2<span class="token operator">-></span>age <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> s1<span class="token operator">-></span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/../image/Snipaste_2023-02-16_10-21-09.png"></p>
+<h3 id="结构体大小"><a href="#结构体大小" class="headerlink" title="结构体大小"></a>结构体大小</h3><p>大小是遵循下面的规则来进行计算的：<br>结构体中的各个数据要求字节对齐，规则如下：</p>
+<ul>
+<li>规则一：结构体中元素按照定义顺序依次置于内存中，但并不是紧密排列的。从结构体首地址开始依次将元素放入内存时，元素会被放置在其自身对齐大小的整数倍地址上（0默认是所有大小的整数倍）</li>
+<li>规则二：如果结构体大小不是所有元素中最大对齐大小的整数倍，则结构体对齐到最大元素对齐大小的整数倍，填充空间放置到结构体末尾。</li>
+<li>规则三：基本数据类型的对齐大小为其自身的大小，结构体数据类型的对齐大小为其元素中最大对齐大小元素的对齐大小。</li>
+</ul>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">Object</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">char</span> a<span class="token punctuation">;</span>   <span class="token comment">//char占据1个字节</span>
+    <span class="token keyword">int</span> b<span class="token punctuation">;</span>   <span class="token comment">//int占据4个字节，因为前面存了一个char，按理说应该从第2个字节开始存放，但是根据规则一，必须在自己的整数倍位置上存放，所以2不是4的整数倍位置，这时离1最近的下一个整数倍地址就是4了，所以前面空3个字节的位置出来，然后再放置</span>
+    <span class="token keyword">short</span> c<span class="token punctuation">;</span> <span class="token comment">//前面存完int之后，就是从8开始了，刚好满足short（2字节）的整数倍，但是根据规则二，整个结构体大小必须是最大对齐大小的整数倍（这里最大对齐大小是int，所以是4），存完short之后，只有10个字节，所以屁股后面再补两个空字节，这样就可以了</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="结构体数组"><a href="#结构体数组" class="headerlink" title="结构体数组"></a>结构体数组</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+
+<span class="token keyword">struct</span> <span class="token class-name">Student</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> id<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>name<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">Student</span> arr<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token string">"小明"</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token comment">// 声明一个结构体类型的数组，其实和基本类型声明数组是一样的</span>
+                             <span class="token punctuation">&#123;</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token string">"小红"</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token comment">// 多个结构体数据用逗号隔开</span>
+                             <span class="token punctuation">&#123;</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token string">"小刚"</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 先通过arr[1]拿到第二个结构体，然后再通过同样的方式 .数据名称 就可以拿到对应的值了</span>
+    <span class="token keyword">struct</span> <span class="token class-name">Student</span> student <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token string">"小明"</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">Student</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token operator">&amp;</span>student<span class="token punctuation">;</span> <span class="token comment">// 同样的，类型后面加上*就是一个结构体类型的指针了</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// 由于.运算符优先级更高，所以需要先使用*p得到地址上的值，然后再去访问对应数据</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span> p<span class="token operator">-></span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// 使用 -> 运算符来快速将指针所指结构体的对应数据取出</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -394,7 +500,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/02/25/note/">http://example.com/2023/02/25/note/</a>
+                    <a href="http://example.com/2023/02/25/cStudy/">http://example.com/2023/02/25/cStudy/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -432,8 +538,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/note/">
-                                    <span class="chip bg-color">note</span>
+                                <a href="/tags/c/">
+                                    <span class="chip bg-color">c</span>
                                 </a>
                             
                         </div>
@@ -512,9 +618,60 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2023/02/25/cStudy/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="c语言学习">
+                        
+                        <span class="card-title">c语言学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/c/" class="post-category">
+                                    c
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/c/">
+                        <span class="chip bg-color">c</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2023/02/25/hexoUse/">
                     <div class="card-image">
@@ -532,9 +689,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -556,56 +713,6 @@
                     
                     <a href="/tags/UsingNote/">
                         <span class="chip bg-color">UsingNote</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/02/25/note/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="note">
-                        
-                        <span class="card-title">note</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-25
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/note/" class="post-category">
-                                    note
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/note/">
-                        <span class="chip bg-color">note</span>
                     </a>
                     
                 </div>
