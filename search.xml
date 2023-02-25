@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>hexoUsing</title>
+      <link href="/2023/02/25/hexoUse/"/>
+      <url>/2023/02/25/hexoUse/</url>
+      
+        <content type="html"><![CDATA[<h1 id="清除以前文件"><a href="#清除以前文件" class="headerlink" title="清除以前文件"></a>清除以前文件</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo c<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h1 id="生成文件"><a href="#生成文件" class="headerlink" title="生成文件"></a>生成文件</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h1 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h1 id="本地测试"><a href="#本地测试" class="headerlink" title="本地测试"></a>本地测试</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> UsingNote </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>note</title>
       <link href="/2023/02/25/note/"/>
       <url>/2023/02/25/note/</url>
